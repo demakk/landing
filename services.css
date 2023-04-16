@@ -1,0 +1,88 @@
+/* Services section*/
+
+#services {
+}
+
+#services .service-container {
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+  background-color: #f5fefd;
+}
+
+#services .service-top {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 85%;
+  max-width: 55rem;
+  margin: 0 auto;
+}
+
+#services .service-top p {
+  color: black;
+  font-size: 1rem;
+  margin-top: 0.6rem;
+  line-height: 1.8rem;
+  font-weight: 300;
+  letter-spacing: 0.05rem;
+}
+
+#services .service-bottom {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+#services .service-item {
+  flex-basis: 65%;
+  padding: 1rem;
+  margin: 0 1rem;
+  margin-top: 3rem;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+  text-align: start;
+  border-radius: 10px;
+  background-image: linear-gradient(
+    90deg,
+    rgba(46, 170, 250, 0.9) 0%,
+    rgba(140, 4, 219, 0.7) 100%
+  );
+}
+
+#services .service-icon img {
+  width: 3rem;
+}
+
+#services .service-item > h2 {
+  margin: 0.5rem 0;
+  color: white;
+}
+
+#services .service-item > h2 span {
+  margin: 0.5rem 0;
+  color: white;
+  padding: 0.3rem;
+  border: 3px dashed #ff007f;
+}
+
+/* End of services section*/
+
+@media all and (min-width: 700px) {
+  #services .service-item {
+    flex-basis: 35%;
+  }
+}
+
+/*Desktop menu*/
+
+@media all and (min-width: 960px) {
+}
+
+@media all and (min-width: 1100px) {
+  #services .service-item {
+    flex-basis: 20%;
+  }
+}

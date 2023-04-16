@@ -1,0 +1,162 @@
+/* Our office */
+#office {
+  padding-top: 0.5rem;
+}
+#office .office-container {
+  background-color: #f5fefd;
+}
+#office .interier-images {
+  margin: 0 auto;
+  max-width: 90%;
+  position: relative;
+}
+
+#office .interier-images {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 3rem;
+}
+#office .card {
+  margin: 1rem;
+  position: relative;
+  width: 18rem;
+  height: 15rem;
+  background-color: #000;
+  overflow: hidden;
+}
+#office .card__image {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  scale: 1.15;
+  opacity: 0.3;
+  transition: opacity 0.25s, scale 0.35s;
+}
+#office .card__body {
+  position: absolute;
+  inset: 0;
+  padding: 50px;
+  color: #fff;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 15px;
+  justify-content: center;
+}
+#office .card__body::before {
+  content: "";
+  position: absolute;
+  inset: 20px;
+  border: 2px solid #fff;
+  opacity: 1;
+  scale: 1;
+  transition: opacity 0.25s, scale 0.25s;
+}
+#office .card__title {
+  letter-spacing: 1px;
+  opacity: 1;
+  text-transform: uppercase;
+  text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
+}
+#office .card__description {
+  font-size: 14px;
+  opacity: 1;
+
+  transition: opacity 0.25s, translate 0.25s;
+}
+
+/* End of our office */
+
+@media all and (min-width: 700px) {
+  #office .interier-images {
+    height: 900px;
+  }
+  #office .card {
+    margin: 1rem;
+    position: relative;
+    width: 24rem;
+    height: 19rem;
+    background-color: #000;
+    overflow: hidden;
+  }
+}
+
+/*Desktop menu*/
+
+@media all and (min-width: 960px) {
+  #office .interier-images {
+    display: flex;
+    flex-direction: row;
+  }
+  #office .card {
+    margin: 1rem;
+    position: relative;
+    width: 25rem;
+    height: 18rem;
+    background-color: #000;
+    overflow: hidden;
+  }
+  #office .card__image {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    scale: 1.15;
+    transition: opacity 0.25s, scale 0.35s;
+  }
+  #office .card:hover .card__image {
+    opacity: 0.5;
+    scale: 1;
+  }
+  #office .card__body {
+    position: absolute;
+    inset: 0;
+    padding: 50px;
+    color: #fff;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 15px;
+    justify-content: center;
+  }
+  #office .card__body::before {
+    content: "";
+    position: absolute;
+    inset: 20px;
+    border: 2px solid #fff;
+    opacity: 0;
+    scale: 1.25;
+    transition: opacity 0.25s, scale 0.25s;
+  }
+  #office .card:hover .card__body::before {
+    opacity: 1;
+    scale: 1;
+  }
+  #office .card__title {
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
+  }
+  #office .card:hover .card__title {
+    opacity: 1;
+  }
+  #office .card__description {
+    font-size: 14px;
+    opacity: 0;
+    translate: -25px;
+    transition: opacity 0.25s, translate 0.25s;
+  }
+  #office .card:hover .card__description {
+    opacity: 1;
+    translate: 0;
+  }
+
+  #office .interier-images {
+    height: auto;
+  }
+  #office .section-title {
+    margin-bottom: 5rem;
+  }
+}

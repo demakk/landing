@@ -1,0 +1,129 @@
+/* Projects section*/
+
+#projects {
+}
+
+#projects .projects_container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-color: #f5fefd;
+}
+
+#projects .projects_header {
+  max-width: 60rem;
+  margin: 0 auto;
+}
+
+#projects .all-projects {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+#projects .project-item {
+  display: flex;
+  margin: 1rem;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 80%;
+  overflow: hidden;
+  border-radius: 15px;
+}
+
+#projects .project-info {
+  padding: 30px;
+  flex-basis: 80%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: none;
+  justify-content: center;
+  background-image: linear-gradient(
+    90deg,
+    rgba(46, 170, 250, 0.9) 0%,
+    rgba(140, 4, 219, 0.7) 100%
+  );
+  color: white;
+  overflow: hidden;
+}
+
+#projects .project-info h1 {
+  font-size: 2rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+#projects .project-info span {
+  margin: 0.5rem 0;
+  color: white;
+  padding: 0.3rem;
+  border: 3px dashed #ff007f;
+}
+
+#projects .project-info h2 {
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-top: 10px;
+  margin: 1rem 0;
+}
+
+#projects .project_image {
+  flex-basis: 90%;
+  height: 330px;
+  position: relative;
+  overflow: hidden;
+}
+
+#projects .project_image::before {
+  content: "";
+  position: absolute;
+  background-color: black;
+  inset: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0.5;
+  z-index: 1;
+}
+
+#projects .project_image img {
+  transition: 0.3s ease transform;
+}
+
+#projects .project-item:hover .project_image img {
+  transform: scale(1.1);
+}
+
+/* End of projects section*/
+
+@media all and (min-width: 700px) {
+  #projects .project-item {
+    width: 35%;
+  }
+
+  #projects .project-info {
+    padding: 2rem;
+  }
+}
+
+/*Desktop menu*/
+
+@media all and (min-width: 960px) {
+  #projects .project-item {
+    width: 50%;
+    flex-direction: row;
+  }
+  #projects .project-item {
+    height: 330px;
+  }
+
+  #projects .project_image {
+    flex-basis: 90%;
+
+    position: relative;
+    overflow: hidden;
+  }
+}
