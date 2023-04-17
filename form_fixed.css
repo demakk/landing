@@ -1,19 +1,43 @@
-#form {
+#black-layer {
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  position: absolute;
+  inset: 0;
+  z-index: 100;
+  opacity: 0.7;
+  display: none;
 }
 
-#form .wrapper-container {
-  background-image: linear-gradient(
-    90deg,
-    rgba(46, 170, 250, 0.9) 0%,
-    rgba(140, 4, 219, 0.7) 100%
-  );
+#black-layer.active {
+  display: block;
+}
+
+#form_pop-up {
+  position: fixed;
+  width: 500px;
+  height: 300px;
+  top: 25%;
+  left: 50%;
+  margin-top: -120px; /* Negative half of height. */
+  margin-left: -250px; /* Negative half of width. */
+  z-index: 101;
+  display: none;
+}
+
+#form_pop-up.active {
+  display: block;
+}
+
+#form_pop-up .wrapper-container {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-#form .wrapper {
+#form_pop-up .wrapper {
   overflow: hidden;
+  position: relative;
   max-width: 25rem;
   background: #fff;
   padding: 2rem;
@@ -21,12 +45,19 @@
   border-radius: 10px;
 }
 
-#form .wrapper .title-text {
+#form_pop-up .wrapper .title-text {
   display: flex;
   width: 210%;
 }
 
-#form .wrapper .title {
+#form_pop-up .close-button {
+  width: 1.5rem;
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+}
+
+#form_pop-up .wrapper .title {
   width: 50%;
   font-size: 2.2rem;
   font-weight: 600;
@@ -34,7 +65,7 @@
   transition: all 0.3s;
 }
 
-#form .wrapper .slide-controls {
+#form_pop-up .wrapper .slide-controls {
   position: relative;
   display: flex;
   height: 3.3rem;
@@ -46,7 +77,7 @@
   border-radius: 5px;
 }
 
-#form .slide-controls .slide {
+#form_pop-up .slide-controls .slide {
   height: 100%;
   width: 100%;
   color: #fff;
@@ -59,11 +90,11 @@
   transition: all 0.6s;
 }
 
-#form .slide-controls label.signup {
+#form_pop-up .slide-controls label.signup {
   color: #000;
 }
 
-#form .slide-controls .slider-tab {
+#form_pop-up .slide-controls .slider-tab {
   position: absolute;
   height: 100%;
   width: 50%;
@@ -78,55 +109,55 @@
   transition: all 0.3s;
 }
 
-#form input[type="radio"] {
+#form_pop-up input[type="radio"] {
   display: none;
 }
 
-#form #signup:checked ~ .slider-tab {
+#form_pop-up #signup:checked ~ .slider-tab {
   left: 50%;
 }
 
-#form #signup:checked ~ label.signup {
+#form_pop-up #signup:checked ~ label.signup {
   color: #fff;
   cursor: default;
   user-select: none;
 }
 
-#form #signup:checked ~ label.login {
+#form_pop-up #signup:checked ~ label.login {
   color: #000;
 }
 
-#form #login:checked ~ label.signup {
+#form_pop-up #login:checked ~ label.signup {
   color: #000;
 }
 
-#form #login:checked ~ label.login {
+#form_pop-up #login:checked ~ label.login {
   cursor: default;
   user-select: none;
 }
 
-#form .wrapper .form-container {
+#form_pop-up .wrapper .form-container {
   width: 100%;
   overflow: hidden;
 }
 
-#form .form-container .form-inner {
+#form_pop-up .form-container .form-inner {
   display: flex;
   width: 200%;
 }
 
-#form .form-container .form-inner form {
+#form_pop-up .form-container .form-inner form {
   width: 50%;
   transition: all 0.2s ease;
 }
 
-#form .form-inner form .field {
+#form_pop-up .form-inner form .field {
   height: 50px;
   width: 100%;
   margin-top: 20px;
 }
 
-#form .form-inner form .field input {
+#form_pop-up .form-inner form .field input {
   height: 100%;
   width: 100%;
   outline: none;
@@ -138,41 +169,41 @@
   transition: all 0.3s ease;
 }
 
-#form .form-inner form .field input:focus {
+#form_pop-up .form-inner form .field input:focus {
   border-color: #fa4299;
   /* box-shadow: inset 0 0 3px #fb6aae; */
 }
 
-#form .form-inner form .field input::placeholder {
+#form_pop-up .form-inner form .field input::placeholder {
   color: #999;
   transition: all 0.3s ease;
 }
 
-#form form .field input:focus::placeholder {
+#form_pop-up form .field input:focus::placeholder {
   color: #b3b3b3;
 }
 
-#form .form-inner form .pass-link {
+#form_pop-up .form-inner form .pass-link {
   margin-top: 2rem;
 }
 
-#form .form-inner form .signup-link {
+#form_pop-up .form-inner form .signup-link {
   text-align: center;
   margin-top: 2rem;
 }
 
-#form .form-inner form .pass-link a,
+#form_pop-up .form-inner form .pass-link a,
 .form-inner form .signup-link a {
   color: #fa4299;
   text-decoration: none;
 }
 
-#form .form-inner form .pass-link a:hover,
+#form_pop-up .form-inner form .pass-link a:hover,
 .form-inner form .signup-link a:hover {
   text-decoration: underline;
 }
 
-#form form .btn {
+#form_pop-up form .btn {
   height: 50px;
   width: 100%;
   border-radius: 5px;
@@ -180,7 +211,7 @@
   overflow: hidden;
 }
 
-#form form .btn .btn-layer {
+#form_pop-up form .btn .btn-layer {
   height: 100%;
   width: 300%;
   position: absolute;
@@ -194,11 +225,11 @@
   transition: all 0.3s ease;
 }
 
-#form form .btn:hover .btn-layer {
+#form_pop-up form .btn:hover .btn-layer {
   left: 0;
 }
 
-#form form .btn input[type="submit"] {
+#form_pop-up form .btn input[type="submit"] {
   height: 100%;
   width: 100%;
   z-index: 1;
@@ -211,19 +242,4 @@
   font-size: 1.3rem;
   font-weight: 500;
   cursor: pointer;
-}
-
-@media all and (min-width: 700px) {
-  #form .wrapper {
-    max-width: 30rem;
-    padding: 3rem;
-    margin: 3rem auto;
-    border-radius: 10px;
-  }
-}
-
-@media all and (min-width: 960px) {
-  #form .wrapper {
-    padding: 2rem;
-  }
 }

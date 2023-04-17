@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="office.css" />
     <link rel="stylesheet" href="form.css" />
     <link rel="stylesheet" href="footer.css" />
+    <link rel="stylesheet" href="form_fixed.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
@@ -74,8 +75,12 @@
               </ul>
             </li>
 
-            <li class="item button first"><a href="#form">Login</a></li>
-            <li class="item button secondary"><a href="#form">Sing Up</a></li>
+            <li class="item button first">
+              <a class="clickable login">Login</a>
+            </li>
+            <li class="item button secondary">
+              <a class="clickable signup">Sing Up</a>
+            </li>
             <li class="toggle">
               <a><i class="fa fa-solid fa-bars fa-fade"></i></a>
             </li>
@@ -335,9 +340,15 @@
         </div>
       </section>
 
-      <section id="form">
+      <section id="black-layer">
+        <div class="black-shade"></div>
+      </section>
+      <section id="form_pop-up">
         <div class="wrapper-container">
           <div class="wrapper">
+            <div class="close-button">
+              <img src="images/close.png" alt="" />
+            </div>
             <div class="title-text">
               <div class="title login">Login Form</div>
               <div class="title signup">Signup Form</div>

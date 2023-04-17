@@ -13,6 +13,10 @@
   margin-right: 0.5rem;
 }
 
+.menu a {
+  display: block;
+}
+
 .menu .logo a p {
   text-transform: uppercase;
   display: inline-block;

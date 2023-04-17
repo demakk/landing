@@ -10,6 +10,7 @@ body {
   width: 100%;
   font-family: "Montserrat", sans-serif;
   background-color: #f5fefd;
+  position: relative;
 }
 
 nav {
