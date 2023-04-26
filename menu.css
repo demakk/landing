@@ -188,9 +188,11 @@
   }
   .menu li.item.button.first {
     margin-left: 2rem;
+    cursor: pointer;
   }
   .menu li.secondary {
     margin-right: 1rem;
+    cursor: pointer;
   }
   .menu .logo {
     flex: none;
